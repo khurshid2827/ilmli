@@ -24,14 +24,20 @@ func main() {
 
 	users := r.Group("/users")
 
+	users.GET("/", user.GetMe)
 	users.GET("/:userID", user.GetById)
 	users.GET("/teacher/:userID", user.GetTeachers)
+
+	users.PUT("/update", user.UpdateUser)
 
 	posts := r.Group("/posts")
 
 	posts.GET("/:postID", post.GetById)
 	posts.GET("/user/:userID", post.GetByUserId)
 	posts.GET("/category/:categoryID", post.GetByCategoryId)
+
+	posts.POST("/new", post.NewPost)
+	posts.PUT("/update", post.UpdatePost)
 
 	categories := r.Group("/categories")
 

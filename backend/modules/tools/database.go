@@ -10,9 +10,9 @@ import (
 
 var (
 	host     = "localhost"
-	user     = "jamshid"
-	password = "1111"
-	dbname   = "ilmtop"
+	user     = "username"
+	password = "password"
+	dbname   = "ilmli"
 	port     = 5432
 )
 

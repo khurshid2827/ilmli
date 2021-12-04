@@ -1,7 +1,7 @@
---TRIGGER FUNCTIONS
+-- --TRIGGER FUNCTIONS
 
--- trigger works after inserting into table users and encrypts
--- users's password
+-- -- trigger works after inserting into table users and encrypts
+-- -- users's password
 
 
 -- CREATE or REPLACE FUNCTION encrypt_users()

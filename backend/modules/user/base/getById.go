@@ -22,6 +22,7 @@ func GetUserById(id int) (user UserBody) {
 		&user.MobileNumber,
 		&user.Bio,
 		&user.Learners,
+		&user.Picture,
 	)
 
 	if err != nil {
@@ -37,7 +38,8 @@ select
 	highlight,
 	mobile_number,
 	bio,
-	learners 
+	learners,
+	picture 
 from users
 where user_id = $1
 `

@@ -5,6 +5,7 @@ import (
 	post "app/modules/post/controllers"
 	user "app/modules/user/controllers"
 	verify "app/modules/verify/controllers"
+	wiki "app/modules/wikipedia"
 
 	"github.com/gin-gonic/gin"
 )
@@ -50,6 +51,11 @@ func main() {
 	verifies.POST("/signupCheck", verify.SignupCheck)
 	verifies.POST("/login", verify.Login)
 	verifies.POST("/logout", verify.Logout)
+
+	wikipedia := r.Group("/wikipedia")
+
+	wikipedia.GET("/pages/:names", wiki.GetPages)
+	wikipedia.GET("/page/:name", wiki.GetPage)
 
 	r.Run()
 }
